@@ -22,5 +22,9 @@ starting with free local models (Ollama) and moving to hosted providers one at a
 | 8 Agents, Tools and Memory | [notes/08-agents-tools-and-memory.md](notes/08-agents-tools-and-memory.md) |
 | 9 Orchestration and Human Oversight (LangGraph) | [notes/09-agent-orchestration-and-human-oversight.md](notes/09-agent-orchestration-and-human-oversight.md) |
 | 10 Multi-Agent Systems | [notes/10-multi-agent-systems.md](notes/10-multi-agent-systems.md) |
+| 11 MCP, Security, Governance | [notes/11-mcp-security-and-governance.md](notes/11-mcp-security-and-governance.md) |
+| 12 Deployment and Observability | [notes/12-deployment-and-observability.md](notes/12-deployment-and-observability.md) |
+| 13 Capstone Project | [notes/13-capstone-project.md](notes/13-capstone-project.md) |
+| Not covered + resources | [notes/99-gaps-and-further-resources.md](notes/99-gaps-and-further-resources.md) |
 
 Diagrams use Mermaid and render directly on GitHub. Code targets local Ollama models; blocks that need a model were not executed here, so expect small fixes as library APIs evolve.
