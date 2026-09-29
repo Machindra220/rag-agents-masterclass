@@ -25,6 +25,7 @@ starting with free local models (Ollama) and moving to hosted providers one at a
 | 11 MCP, Security, Governance | [notes/11-mcp-security-and-governance.md](notes/11-mcp-security-and-governance.md) |
 | 12 Deployment and Observability | [notes/12-deployment-and-observability.md](notes/12-deployment-and-observability.md) |
 | 13 Capstone Project | [notes/13-capstone-project.md](notes/13-capstone-project.md) |
+| Observability guide (Phoenix + Prometheus/Grafana) | [notes/observability-guide.md](notes/observability-guide.md) · demo: [projects/observability-demo](projects/observability-demo/) |
 | Not covered + resources | [notes/99-gaps-and-further-resources.md](notes/99-gaps-and-further-resources.md) |
 
 Diagrams use Mermaid and render directly on GitHub. Code targets local Ollama models; blocks that need a model were not executed here, so expect small fixes as library APIs evolve.

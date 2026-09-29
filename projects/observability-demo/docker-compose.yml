@@ -1,0 +1,31 @@
+# Optional infra layer (Step 3 in the guide). App-level tracing works without this file.
+#   docker compose up -d
+#   Phoenix     http://localhost:6006   (same as `uv run phoenix serve`, but persistent)
+#   Prometheus  http://localhost:9090
+#   Grafana     http://localhost:3000   (admin / admin)
+services:
+  phoenix:
+    image: arizephoenix/phoenix:latest
+    ports: ["6006:6006", "4317:4317"]
+    volumes: [phoenix:/mnt/data]
+    environment:
+      PHOENIX_WORKING_DIR: /mnt/data
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports: ["9090:9090"]
+    volumes: ["./prometheus.yml:/etc/prometheus/prometheus.yml:ro"]
+    extra_hosts: ["host.docker.internal:host-gateway"]
+
+  node-exporter:            # CPU, RAM, disk, network of the machine running Ollama
+    image: prom/node-exporter:latest
+    ports: ["9100:9100"]
+
+  grafana:
+    image: grafana/grafana:latest
+    ports: ["3000:3000"]
+    volumes: [grafana:/var/lib/grafana]
+
+volumes:
+  phoenix: {}
+  grafana: {}
