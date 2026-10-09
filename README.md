@@ -14,6 +14,7 @@ starting with free local models (Ollama) and moving to hosted providers one at a
 |---|---|
 | 0 Environment and Local Models | [notes/00-setup-and-local-llms.md](notes/00-setup-and-local-llms.md) |
 | 1 Python for AI Engineering | [notes/01-python-for-ai-engineering.md](notes/01-python-for-ai-engineering.md) |
+| 1A ML/DL Refresher & CV Primer | [notes/01a-ml-dl-and-computer-vision-primer.md](notes/01a-ml-dl-and-computer-vision-primer.md) |
 | 2 LLM Architecture and Ecosystem | [notes/02-llm-architecture-and-ecosystem.md](notes/02-llm-architecture-and-ecosystem.md) |
 | 3 Prompting, Evaluation, Reliability | [notes/03-prompt-engineering-and-evaluation.md](notes/03-prompt-engineering-and-evaluation.md) |
 | 4 Retrieval and Vector Infrastructure | [notes/04-retrieval-and-vector-infrastructure.md](notes/04-retrieval-and-vector-infrastructure.md) |
@@ -25,7 +26,11 @@ starting with free local models (Ollama) and moving to hosted providers one at a
 | 10 Multi-Agent Systems | [notes/10-multi-agent-systems.md](notes/10-multi-agent-systems.md) |
 | 11 MCP, Security, Governance | [notes/11-mcp-security-and-governance.md](notes/11-mcp-security-and-governance.md) |
 | 12 Deployment and Observability | [notes/12-deployment-and-observability.md](notes/12-deployment-and-observability.md) |
+| 12A Cloud AI on AWS | [notes/12a-cloud-ai-on-aws.md](notes/12a-cloud-ai-on-aws.md) |
+| 12B Voice and Real-Time Agents | [notes/12b-voice-and-real-time-agents.md](notes/12b-voice-and-real-time-agents.md) |
+| 13A Coding Agents | [notes/13a-coding-agents.md](notes/13a-coding-agents.md) |
 | 13 Capstone Project | [notes/13-capstone-project.md](notes/13-capstone-project.md) |
+| 14 Interview Sprint | [notes/14-interview-sprint.md](notes/14-interview-sprint.md) |
 | Observability guide (Phoenix + Prometheus/Grafana) | [notes/observability-guide.md](notes/observability-guide.md) · demo: [projects/observability-demo](projects/observability-demo/) |
 | Not covered + resources | [notes/99-gaps-and-further-resources.md](notes/99-gaps-and-further-resources.md) |
 

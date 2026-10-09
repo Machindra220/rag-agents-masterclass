@@ -30,7 +30,7 @@ Work through **19 modules in order**, from basics to advanced. That is about 1 s
 | **[Added]** | Neither programme; added for self-study |
 
 Module numbers 0–13 match the notes files in [`notes/`](notes/). Lettered modules (1A, 12A, 12B, 13A) and Module 14
-are new from Crio. Their notes are still to be written.
+are new from Crio, with notes files `01a-`, `12a-`, `12b-`, `13a-` and `14-`.
 
 ## Model strategy: local first, then one provider at a time
 
@@ -395,7 +395,7 @@ flowchart TB
 |---|---|---|---|
 | 0 Setup and Local LLMs | Hello local LLM | [notes](notes/00-setup-and-local-llms.md) | Not started |
 | 1 Python for AI Engineering | LLM API service | [notes](notes/01-python-for-ai-engineering.md) | Not started |
-| 1A ML/DL & CV Primer | SnapClassify | to write | Not started |
+| 1A ML/DL & CV Primer | SnapClassify | [notes](notes/01a-ml-dl-and-computer-vision-primer.md) | Not started |
 | 2 LLM Architecture | Benchmark + ModelSwitch | [notes](notes/02-llm-architecture-and-ecosystem.md) | Not started |
 | 3 Prompting, Context, Evals | Prompt Lab + PromptForge | [notes](notes/03-prompt-engineering-and-evaluation.md) | Not started |
 | 4 Retrieval | Mini-RAG + FindIt | [notes](notes/04-retrieval-and-vector-infrastructure.md) | Not started |
@@ -407,11 +407,11 @@ flowchart TB
 | 10 Multi-Agent | TriageOps | [notes](notes/10-multi-agent-systems.md) | Not started |
 | 11 MCP & Security | GateKeeper MCP | [notes](notes/11-mcp-security-and-governance.md) | Not started |
 | 12 Deploy & Observability | EvalLab, RouteCache, SafeOps | [notes](notes/12-deployment-and-observability.md) | Not started |
-| 12A Cloud AI on AWS | ShipIt | to write | Not started |
-| 12B Voice Agents | VoiceMate | to write | Not started |
-| 13A Coding Agents | RepoAgent | to write | Not started |
+| 12A Cloud AI on AWS | ShipIt | [notes](notes/12a-cloud-ai-on-aws.md) | Not started |
+| 12B Voice Agents | VoiceMate | [notes](notes/12b-voice-and-real-time-agents.md) | Not started |
+| 13A Coding Agents | RepoAgent | [notes](notes/13a-coding-agents.md) | Not started |
 | 13 Capstone | Your product | [notes](notes/13-capstone-project.md) | Not started |
-| 14 Interview Sprint | Mock rounds | to write | Not started |
+| 14 Interview Sprint | Mock rounds | [notes](notes/14-interview-sprint.md) | Not started |
 
 ## Sources
 
