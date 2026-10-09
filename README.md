@@ -3,8 +3,8 @@
 Hands-on, brick-by-brick learning path for building production-grade RAG pipelines and Agentic AI systems,
 starting with free local models (Ollama) and moving to hosted providers one at a time.
 
-- **Syllabus:** [SYLLABUS.md](SYLLABUS.md): 14 modules, 6 phases, 24 weeks plus a setup week.
-- **Crio.Do syllabus (this branch):** [CRIO_SYLLABUS.md](CRIO_SYLLABUS.md) · **comparison:** [COMPARISON.md](COMPARISON.md)
+- **Syllabus:** [SYLLABUS.md](SYLLABUS.md): unified IIT Roorkee + Crio.Do path, 19 modules from basics to advanced (~32 weeks plus a setup week).
+- **Source syllabi:** IIT programme (base) · Crio.Do: [CRIO_SYLLABUS.md](CRIO_SYLLABUS.md) · **comparison:** [COMPARISON.md](COMPARISON.md)
 - **Notes:** one file per module in [`notes/`](notes/).
 - **Projects** will live in [`projects/`](projects/) (`00-hello-local-llm/`, `01-llm-api-service/`, …) as we build them.
 
