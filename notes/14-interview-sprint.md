@@ -1,6 +1,6 @@
 # Module 14 — Interview Sprint [Crio]
 
-> Career · Week 32 · [Syllabus](../SYLLABUS.md#module-14--interview-sprint-week-32-crio)
+> Career · Week 33 · [Syllabus](../SYLLABUS.md#module-14--interview-sprint-week-33-crio)
 
 **Goal:** prepare for AI Engineer and Forward Deployed Engineer (FDE) interviews the way AI companies, GCCs and startups
 run them, using your own projects as evidence.

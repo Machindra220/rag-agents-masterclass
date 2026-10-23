@@ -9,7 +9,7 @@ Why both: [COMPARISON.md](COMPARISON.md). Living tracker: <https://claude.ai/cod
 
 ## How to use this syllabus
 
-Work through **19 modules in order**, from basics to advanced. That is about 1 setup week plus 32 weeks at
+Work through **20 modules in order**, from basics to advanced, plus an optional bonus capstone (Module 15). That is about 1 setup week plus 33 weeks at
 8–10 hours a week. Every module ends in a working build in this repo.
 
 - **One brick at a time.** Each module splits into numbered bricks (1.1, 1.2 …). Finish one brick, run its exercise, then move on.
@@ -28,9 +28,11 @@ Work through **19 modules in order**, from basics to advanced. That is about 1 s
 | **[Crio]** | Crio.Do curriculum, not in the IIT programme |
 | **[Both]** | In both, with Crio adding a build or depth |
 | **[Added]** | Neither programme; added for self-study |
+| **[v2]** | Gap filled from the 12-month AI & Agentic AI syllabus (v2) |
 
 Module numbers 0–13 match the notes files in [`notes/`](notes/). Lettered modules (1A, 12A, 12B, 13A) and Module 14
-are new from Crio, with notes files `01a-`, `12a-`, `12b-`, `13a-` and `14-`.
+are new from Crio, with notes files `01a-`, `12a-`, `12b-`, `13a-` and `14-`. Module 12C and the bonus Module 15
+come from the v2 syllabus, with notes files `12c-` and `15-`.
 
 ## Model strategy: local first, then one provider at a time
 
@@ -63,16 +65,16 @@ flowchart TB
         M6[6 Fine-tuning strategy] --> M7[7 PEFT, DPO, distillation] --> M8[8 Agents, tools, memory] --> M9[9 Orchestration & HITL] --> M10[10 Multi-agent]
     end
     subgraph L4["Level 4 · Ship"]
-        M11[11 MCP, security, governance] --> M12[12 Deploy & observability] --> M12A[12A Cloud AI on AWS] --> M12B[12B Voice & real-time]
+        M11[11 MCP, security, governance] --> M12[12 Deploy & observability] --> M12A[12A Cloud AI on AWS] --> M12B[12B Voice & real-time] --> M12C[12C Kubernetes & SRE observability]
     end
     subgraph L5["Advanced · Career"]
-        M13A[13A Coding agents] --> M13[13 Capstone] --> M14[14 Interview sprint]
+        M13A[13A Coding agents] --> M13[13 Capstone] --> M14[14 Interview sprint] --> M15[15 Bonus: autonomous SWE agent]
     end
     M1A --> M2
     M3 --> M4
     M5 --> M6
     M10 --> M11
-    M12B --> M13A
+    M12C --> M13A
 ```
 
 | Level | Module | Weeks | Build | Source build |
@@ -93,9 +95,11 @@ flowchart TB
 | 4 Ship | 12 Deployment, Observability, Operations | 24–25 | EvalLab + RouteCache + SafeOps | Crio P7, P9, P10 |
 | 4 Ship | 12A Cloud AI on AWS [Crio] | 26 | ShipIt | Crio B5 |
 | 4 Ship | 12B Voice and Real-Time Agents [Crio] | 27 | VoiceMate | Crio B4 |
-| Advanced | 13A Coding Agents [Crio] | 28–29 | RepoAgent | Crio B6 |
-| Advanced | 13 Capstone: Problem → Production | 30–31 | Your own product | Both |
-| Career | 14 Interview Sprint [Crio] | 32 | Mock rounds, portfolio defence | Crio |
+| 4 Ship | 12C Kubernetes and SRE Observability for AI [v2] | 28 | AI on EKS | v2 |
+| Advanced | 13A Coding Agents [Crio] | 29–30 | RepoAgent | Crio B6 |
+| Advanced | 13 Capstone: Problem → Production | 31–32 | Your own product or the AIOps platform | Both, v2 |
+| Career | 14 Interview Sprint [Crio] | 33 | Mock rounds, portfolio defence | Crio |
+| Bonus | 15 Autonomous Software-Engineering Agent [v2] | 34–45 (optional) | DevAgent | v2 |
 
 ---
 
@@ -124,11 +128,15 @@ flowchart TB
 - **1.7 FastAPI basics.**
 - **1.8 Testing:** pytest, mocking an LLM; testing vs evaluation.
 - **1.9 System design for AI apps [Crio]:** API design, data models, auth, async jobs.
+- **1.10 FastAPI beyond basics [v2]:** async endpoints, background tasks, streaming over SSE; API keys, OAuth2 and JWT.
 
 **Build:** FastAPI `/ask` service with Pydantic, retries and offline tests. **Checkpoint:** tests pass with no network.
 
 ### Module 1A — ML/DL Refresher and Computer-Vision Primer (week 4) [Crio]
 
+- **1A.0a NumPy [v2]:** arrays vs lists, shapes (vector, matrix, tensor), broadcasting, slicing, dot product.
+- **1A.0b Pandas [v2]:** DataFrames, `read_csv`/`read_json`, missing values, GroupBy, merges (lab: group incident logs by severity).
+- **1A.0c Statistics [v2]:** mean, median, std, distributions, normal curve, correlation vs causation.
 - **1A.1 What machine learning is:** training vs inference, features, labels, train/val/test split.
 - **1A.2 Bias vs variance; overfitting and underfitting.**
 - **1A.3 Metrics:** accuracy, precision, recall, F1, confusion matrix.
@@ -136,6 +144,8 @@ flowchart TB
 - **1A.5 Neural networks and backpropagation** (intuition, PyTorch basics).
 - **1A.6 CNNs and transfer learning** for images.
 - **1A.7 Classical model vs multimodal LLM:** when a small model is cheaper, faster and better.
+- **1A.8 Classical ML with scikit-learn [v2]:** linear regression, decision trees, random forests; `fit`/`predict`/`score`; cross-validation; RMSE.
+- **1A.9 PyTorch hands-on [v2]:** tensors, autograd, `nn.Module`, the training loop (zero_grad → forward → loss → backward → step), save and load.
 
 **Build — SnapClassify:** fine-tune a pretrained image model in PyTorch, deploy as a small web app, compare with a multimodal LLM.
 **Checkpoint:** table of accuracy, speed and cost: classifier vs LLM.
@@ -153,6 +163,9 @@ flowchart TB
 - **2.9 Caching inside LLM APIs [Crio]:** prompt caching basics.
 - **2.10 Cost, latency, quality trade-offs.**
 - **2.11 Multi-provider router [Crio]:** one gateway over local + hosted models.
+- **2.12 Hugging Face hands-on [v2]:** Hub, pipelines, AutoTokenizer/AutoModel, Datasets, Spaces; encoder vs decoder vs encoder-decoder.
+- **2.13 How LLMs are trained [v2]:** pre-training, instruction tuning, RLHF.
+- **2.14 Hallucination and benchmarks [v2]:** why models make things up; how to read leaderboards.
 
 **Build — Model benchmark + ModelSwitch:** route the same tasks to 3+ models (local first) and record quality, latency, tokens, cost.
 **Checkpoint:** a model choice defended with your own numbers.
@@ -188,6 +201,8 @@ flowchart TB
 - **4.10 Hybrid retrieval basics.**
 - **4.11 Knowledge lifecycle and PII.**
 - **4.12 Frameworks [Added]:** LangChain, LlamaIndex.
+- **4.13 More vector stores and sources [v2]:** pgvector and Pinecone; Confluence and Slack loaders.
+- **4.14 LangChain in depth [v2]:** LCEL pipes, ChatPromptTemplate, output parsers (JSON, Pydantic), conversation memory.
 
 **Build — Mini-RAG, then FindIt:** RAG over your own documents; then a hybrid keyword + semantic search over a real dataset.
 **Checkpoint:** grounded, cited answers; recall@k measured.
@@ -205,6 +220,7 @@ flowchart TB
 - **5.9 Conversation memory and guardrails in RAG [Crio]:** off-topic and injection handling.
 - **5.10 Evals in CI for retrieval [Crio].**
 - **5.11 Advanced patterns [Added]:** parent–child chunks, contextual retrieval, multimodal RAG.
+- **5.12 Self-RAG [v2]:** the model decides when to retrieve and critiques its own answer.
 
 **Build — Grounded Q&A → AskDocs:** hybrid retrieval + reranker + citations + abstention over a real Notion/Drive source, with conversation memory and guardrails.
 **Checkpoint:** eval report (recall, faithfulness, judge quality), cost and latency per query.
@@ -245,6 +261,9 @@ flowchart TB
 - **8.8 Text-to-SQL with a verification loop [Both]:** schema retrieval, sandboxed read-only execution, self-checks.
 - **8.9 Failure-oriented design:** guards, circuit breakers, injection defence.
 - **8.10 Framework tour:** CrewAI, Smolagents, vendor agent SDKs vs LangGraph [Both].
+- **8.11 Memory types [v2]:** episodic, semantic, procedural; retrieval by recency, relevance and importance; summarising old memories.
+- **8.12 Parallel tool calling and tool-error handling [v2].**
+- **8.13 Reasoning patterns compared [v2]:** ReAct, Plan-and-Execute, Reflexion, Tree of Thoughts, and when to use each.
 
 **Build — Tool-Using Agent / ToolAgent:** agent with search, calculator and SQL tools, plus one live external API.
 **Checkpoint:** task-completion rate, tool-call accuracy, graceful failure.
@@ -257,6 +276,7 @@ flowchart TB
 - **9.4 Human-in-the-loop:** approval gates, safe write-actions, audit trails.
 - **9.5 Streaming agent UX.**
 - **9.6 Evaluating and tracing agents [Both].**
+- **9.7 LangSmith [v2]:** tracing and evaluating agent runs.
 
 **Build:** LangGraph agent with an approval gate before risky writes. **Checkpoint:** pause, restart and resume from saved state.
 
@@ -268,6 +288,8 @@ flowchart TB
 - **10.4 Coordination failures; cost and latency.**
 - **10.5 When not to use multi-agent.**
 - **10.6 Agent protocols:** A2A **and ACP [Crio]**.
+- **10.7 CrewAI in depth [v2]:** Agent, Task, Crew, Tool; sequential vs hierarchical process; short-term, long-term and entity memory.
+- **10.8 AutoGen [v2]:** AssistantAgent vs UserProxyAgent, GroupChat, code execution, termination conditions, mixing LLMs.
 
 **Build — TriageOps:** supervisor + classifier + grounded responder + escalation agents on a helpdesk, with human approval on writes.
 **Checkpoint:** classification accuracy, deflection rate, escalation precision, cost per ticket.
@@ -297,6 +319,8 @@ flowchart TB
 - **12.7 Cost engineering [Both]:** routing, semantic + prompt caching (Redis), token budgets, cost-per-query dashboard.
 - **12.8 Scaling LLM APIs [Crio];** load testing, latency budgets.
 - **12.9 Demo UI [Added].**
+- **12.10 Docker in depth [v2]:** multi-stage builds, Docker Compose for multi-service apps.
+- **12.11 LLMOps [v2]:** experiment tracking (MLflow), prompt A/B tests, model registry, latency SLAs.
 
 **Builds — EvalLab, RouteCache, SafeOps [Crio]:** a CI gate that blocks a planted regression; a router + semantic-cache gateway with before/after cost; tracing + PII redaction + blocked injection + drift alert.
 **Checkpoint:** dashboards for latency, cost and quality; a fired drift alert.
@@ -308,6 +332,7 @@ flowchart TB
 - **12A.3 Bedrock AgentCore:** hosting agents.
 - **12A.4 SageMaker:** hosting your own fine-tuned model.
 - **12A.5 Monitoring and cost alarms on AWS.**
+- **12A.6 SageMaker Pipelines and Model Monitor; IAM least privilege for AI workloads [v2].**
 
 **Build — ShipIt:** take AskDocs or DomainCopilot to AWS with eval-gated CI/CD, monitoring, cost alarms, an incident fire-drill and a runbook.
 **Checkpoint:** p95 latency, monthly cost vs budget, time-to-recover.
@@ -324,7 +349,20 @@ flowchart TB
 **Build — VoiceMate:** a voice support agent that uses tools and handles interruptions.
 **Checkpoint:** latency percentiles, task completion, WER, cost per minute.
 
-### Module 13A — Coding Agents (weeks 28–29) [Crio]
+### Module 12C — Kubernetes and SRE Observability for AI (week 28) [v2]
+
+- **12C.1 Kubernetes core:** Pod, Deployment, Service, ConfigMap, Secret.
+- **12C.2 Scaling AI services:** Horizontal Pod Autoscaler, Ingress, persistent volumes.
+- **12C.3 EKS:** eksctl, IAM roles for service accounts, Helm.
+- **12C.4 Prometheus and PromQL;** instrumenting FastAPI.
+- **12C.5 Grafana dashboards and Alertmanager rules.**
+- **12C.6 Datadog APM and LLM Observability.**
+- **12C.7 SLIs, SLOs and error budgets for AI services.**
+
+**Build — AI on EKS:** deploy AskDocs to EKS with HPA, a Grafana dashboard and an SLO burn-rate alert.
+**Checkpoint:** the service scales under load and an SLO alert fires on a planted error spike.
+
+### Module 13A — Coding Agents (weeks 29–30) [Crio]
 
 - **13A.1 How a coding-agent harness wraps an LLM;** plan → execute → deploy.
 - **13A.2 Autonomy levels and safe permissions.**
@@ -337,7 +375,7 @@ flowchart TB
 **Build — RepoAgent:** ship a real feature into a large open-source repo using Claude Code or Cursor, with tests and an eval suite.
 **Checkpoint:** merge-quality PR, review findings closed, retrospective on agent failure modes.
 
-### Module 13 — Capstone: Problem → Production (weeks 30–31)
+### Module 13 — Capstone: Problem → Production (weeks 31–32)
 
 - **13.1 Framing the right problem [Crio]:** one-page spec, success metrics, MVP vs careful build.
 - **13.2 Real constraints [Crio]:** existing systems, data, security, tenancy; stack decisions.
@@ -349,10 +387,11 @@ flowchart TB
 - **13.8 Deploy, hand over, own [Crio]:** runbooks, fire-drill, stakeholder demo.
 - **13.9 Final evaluation and demo day:** Milestone 3.
 - **13.10 Portfolio and career [Added].**
+- **13.11 Capstone option: Agentic AI SRE / AIOps platform [v2]:** alert → LangGraph triage → log and metric agents (Loki, Prometheus) → runbook RAG → RCA → remediation plan → Slack approval → kubectl/Terraform action → validator agent confirms the fix.
 
 **Build:** your own product, deployed and monitored. Optional regulated-vertical ideas from Crio: claims triage, prior-authorisation co-pilot, call-centre QA, text-to-SQL over a large warehouse.
 
-### Module 14 — Interview Sprint (week 32) [Crio]
+### Module 14 — Interview Sprint (week 33) [Crio]
 
 - **14.1 Agentic system-design rounds:** research agents, text-to-SQL over large schemas, multi-agent coordination.
 - **14.2 Ambiguous-problem decomposition:** clarify, decompose, 4-week scope, riskiest assumption.
@@ -361,6 +400,24 @@ flowchart TB
 - **14.5 Portfolio walkthrough and architecture defence;** résumé and LinkedIn.
 
 **Optional tracks (any time) [Crio]:** Data Structures & Algorithms; System Design (LLD + HLD).
+
+### Module 15 — Bonus Capstone: Autonomous Software-Engineering Agent (12 weeks, optional) [v2]
+
+Builds on 13A. Seven LangGraph sub-agents take a GitHub issue to an opened pull request.
+
+1. **Requirements analyst:** issue → structured spec JSON.
+2. **Architecture planner:** spec → file-by-file plan.
+3. **Code writer:** edits code through a filesystem MCP server.
+4. **Test writer:** pytest suite for happy path, edge cases and errors.
+5. **Code reviewer:** style, correctness, security and spec review as JSON.
+6. **Debugger and fixer:** Reflexion loop (run tests → read errors → rewrite), up to 3 retries.
+7. **PR author:** branch, commit and PR through the GitHub MCP server.
+
+Also: codebase RAG in pgvector, episodic memory of past reviews, FastAPI `POST /engineer` streaming progress over SSE,
+EKS deploy, Prometheus/Grafana metrics, and guardrails that block `shell=True` and hardcoded secrets.
+
+**Build — DevAgent:** issue → merged-quality PR on a toy repo, with a 15-minute demo video.
+**Checkpoint:** test pass rate and review findings per run; a blocked unsafe-code attempt.
 
 ---
 
@@ -378,16 +435,18 @@ flowchart TB
 | Module | Tools |
 |---|---|
 | 0–1 | Ollama, uv, Git/GitHub, Docker, Python, Pydantic, asyncio, FastAPI, pytest |
-| 1A | PyTorch, torchvision, Gradio/Streamlit |
+| 1A | NumPy, Pandas, scikit-learn, PyTorch, torchvision, Gradio/Streamlit |
 | 2–3 | Hugging Face, Groq, OpenRouter, OpenAI, Anthropic, Gemini; RAGAS, DeepEval |
 | 4–5 | FAISS, Chroma, Qdrant, BM25, cross-encoders, Docling, Notion/Drive APIs, LlamaIndex, Neo4j or GraphRAG |
 | 6–7 | PEFT, TRL, bitsandbytes, Unsloth, Axolotl, vLLM, Hugging Face Hub |
-| 8–10 | LangGraph, CrewAI, Smolagents, vendor agent SDKs |
+| 8–10 | LangGraph, LangSmith, CrewAI, AutoGen, Smolagents, vendor agent SDKs |
 | 11 | MCP SDK, OAuth, Guardrails AI, NeMo Guardrails, Presidio, promptfoo |
 | 12 | Phoenix, Langfuse, Prometheus, Grafana, Redis, LiteLLM, GitHub Actions, Locust |
 | 12A | AWS Bedrock, AgentCore, SageMaker, CloudWatch |
 | 12B | LiveKit, Whisper or other STT, TTS engines |
 | 13A | Claude Code, Cursor |
+| 12C | Kubernetes, EKS, eksctl, Helm, Prometheus, Grafana, Alertmanager, Datadog |
+| 15 | LangGraph, MCP (filesystem, GitHub), pgvector, FastAPI SSE |
 
 ## Progress tracker
 
@@ -409,12 +468,15 @@ flowchart TB
 | 12 Deploy & Observability | EvalLab, RouteCache, SafeOps | [notes](notes/12-deployment-and-observability.md) | Not started |
 | 12A Cloud AI on AWS | ShipIt | [notes](notes/12a-cloud-ai-on-aws.md) | Not started |
 | 12B Voice Agents | VoiceMate | [notes](notes/12b-voice-and-real-time-agents.md) | Not started |
+| 12C Kubernetes & SRE Observability | AI on EKS | [notes](notes/12c-kubernetes-and-sre-observability.md) | Not started |
 | 13A Coding Agents | RepoAgent | [notes](notes/13a-coding-agents.md) | Not started |
 | 13 Capstone | Your product | [notes](notes/13-capstone-project.md) | Not started |
 | 14 Interview Sprint | Mock rounds | [notes](notes/14-interview-sprint.md) | Not started |
+| 15 Bonus: SWE Agent | DevAgent | [notes](notes/15-autonomous-swe-agent.md) | Not started |
 
 ## Sources
 
 - IIT Roorkee / iHUB DivyaSampark programme brochure and website (Batch 2).
 - Crio.Do *Fellowship Program in AI Engineering*, detailed curriculum page; full version in [CRIO_SYLLABUS.md](CRIO_SYLLABUS.md).
+- *12-Month AI & Agentic AI Complete Learning Syllabus* (v2, October 2026): source of the **[v2]** bricks, Module 12C and Module 15.
 - Brick splits, pacing, local-first model strategy and **[Added]** items are suggestions for self-study.

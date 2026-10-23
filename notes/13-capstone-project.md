@@ -1,6 +1,6 @@
 # Module 13 — Capstone Project
 
-> Phase 6 · Weeks 23–24 · Level 4 Ship · [Syllabus](../SYLLABUS.md#module-13-capstone-project)
+> Advanced · Weeks 31–32 · [Syllabus](../SYLLABUS.md#module-13--capstone-problem--production-weeks-3132)
 
 **Goal:** graduate with one production-ready AI system that integrates RAG, an agent, a fine-tuned model,
 deployment and monitoring — and a demo you can walk any hiring manager through.

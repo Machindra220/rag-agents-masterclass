@@ -1,6 +1,6 @@
 # Module 13A — Coding Agents [Crio]
 
-> Advanced · Weeks 28–29 · [Syllabus](../SYLLABUS.md#module-13a--coding-agents-weeks-2829-crio)
+> Advanced · Weeks 29–30 · [Syllabus](../SYLLABUS.md#module-13a--coding-agents-weeks-2930-crio)
 
 **Goal:** use coding agents (Claude Code, Cursor, Codex, Copilot agent) as your main developer on a large,
 unfamiliar codebase, safely and while staying accountable for quality.
