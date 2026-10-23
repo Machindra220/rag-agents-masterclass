@@ -4,7 +4,7 @@ Hands-on, brick-by-brick learning path for building production-grade RAG pipelin
 starting with free local models (Ollama) and moving to hosted providers one at a time.
 
 - **Syllabus:** [SYLLABUS.md](SYLLABUS.md): unified IIT Roorkee + Crio.Do path, 20 modules from basics to advanced (~33 weeks plus a setup week), plus an optional bonus capstone.
-- **Source syllabi:** IIT programme (base) · Crio.Do: [CRIO_SYLLABUS.md](CRIO_SYLLABUS.md) · **comparison:** [COMPARISON.md](COMPARISON.md)
+- **Source syllabi:** IIT programme (base) · 12-month v2 syllabus ([v2] bricks) · Crio.Do: [CRIO_SYLLABUS.md](CRIO_SYLLABUS.md) · **comparison:** [COMPARISON.md](COMPARISON.md)
 - **Notes:** one file per module in [`notes/`](notes/).
 - **Projects** will live in [`projects/`](projects/) (`00-hello-local-llm/`, `01-llm-api-service/`, …) as we build them.
 
@@ -28,9 +28,12 @@ starting with free local models (Ollama) and moving to hosted providers one at a
 | 12 Deployment and Observability | [notes/12-deployment-and-observability.md](notes/12-deployment-and-observability.md) |
 | 12A Cloud AI on AWS | [notes/12a-cloud-ai-on-aws.md](notes/12a-cloud-ai-on-aws.md) |
 | 12B Voice and Real-Time Agents | [notes/12b-voice-and-real-time-agents.md](notes/12b-voice-and-real-time-agents.md) |
+| 12C Kubernetes and SRE Observability | [notes/12c-kubernetes-and-sre-observability.md](notes/12c-kubernetes-and-sre-observability.md) |
 | 13A Coding Agents | [notes/13a-coding-agents.md](notes/13a-coding-agents.md) |
 | 13 Capstone Project | [notes/13-capstone-project.md](notes/13-capstone-project.md) |
 | 14 Interview Sprint | [notes/14-interview-sprint.md](notes/14-interview-sprint.md) |
+| 15 Bonus: Autonomous SWE Agent | [notes/15-autonomous-swe-agent.md](notes/15-autonomous-swe-agent.md) |
+| [v2] topics study guide (beginner explanations) | [notes/v2-topics-study-guide.md](notes/v2-topics-study-guide.md) |
 | Observability guide (Phoenix + Prometheus/Grafana) | [notes/observability-guide.md](notes/observability-guide.md) · demo: [projects/observability-demo](projects/observability-demo/) |
 | Not covered + resources | [notes/99-gaps-and-further-resources.md](notes/99-gaps-and-further-resources.md) |
 

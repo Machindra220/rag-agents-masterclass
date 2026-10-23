@@ -28,7 +28,7 @@ Work through **20 modules in order**, from basics to advanced, plus an optional 
 | **[Crio]** | Crio.Do curriculum, not in the IIT programme |
 | **[Both]** | In both, with Crio adding a build or depth |
 | **[Added]** | Neither programme; added for self-study |
-| **[v2]** | Gap filled from the 12-month AI & Agentic AI syllabus (v2) |
+| **[v2]** | Gap filled from the 12-month AI & Agentic AI syllabus (v2). Beginner explanations: [notes/v2-topics-study-guide.md](notes/v2-topics-study-guide.md) |
 
 Module numbers 0–13 match the notes files in [`notes/`](notes/). Lettered modules (1A, 12A, 12B, 13A) and Module 14
 are new from Crio, with notes files `01a-`, `12a-`, `12b-`, `13a-` and `14-`. Module 12C and the bonus Module 15
@@ -119,6 +119,7 @@ flowchart TB
 
 ### Module 1 — Python for AI Engineering (weeks 1–3)
 
+- **1.0 Python from zero [v2]:** variables, types, if/else, loops, functions, file and JSON I/O, try/except; classes, `__init__`, inheritance (lab: a `BaseTool` → `SearchTool`, `CalculatorTool` hierarchy). Skip if you already code in Python; free course: Harvard CS50P.
 - **1.1 Modern Python refresher:** data structures, functions, OOP, dataclasses.
 - **1.2 Project hygiene:** `uv`, `.env`, secrets, JSON parsing.
 - **1.3 Pydantic validation** of LLM output.
@@ -154,7 +155,7 @@ flowchart TB
 
 - **2.1 Math essentials [Added]:** vectors, cosine similarity, softmax, temperature, top-p.
 - **2.2 Tokens, embeddings, positional encoding.**
-- **2.3 The Transformer:** attention, decoder-only models.
+- **2.3 The Transformer:** attention, decoder-only models; see attention weights with BertViz [v2].
 - **2.4 Context windows** and long-context trade-offs.
 - **2.5 Model ecosystem:** GPT, Claude, Gemini, Llama, Mistral, Qwen; open vs proprietary.
 - **2.6 Reasoning models and small language models [Both].**
@@ -190,7 +191,7 @@ flowchart TB
 ### Module 4 — Retrieval Architecture and Vector Infrastructure (weeks 9–11)
 
 - **4.1 Why RAG.**
-- **4.2 Embedding models.**
+- **4.2 Embedding models;** plot sentence embeddings in 2D with PCA to see meaning clusters [v2].
 - **4.3 Document parsing [Both]:** PDF, HTML, tables, OCR.
 - **4.4 Chunking strategies.**
 - **4.5 Vector databases and indexes:** FAISS, Chroma, Qdrant; HNSW, IVF.
@@ -263,7 +264,7 @@ flowchart TB
 - **8.10 Framework tour:** CrewAI, Smolagents, vendor agent SDKs vs LangGraph [Both].
 - **8.11 Memory types [v2]:** episodic, semantic, procedural; retrieval by recency, relevance and importance; summarising old memories.
 - **8.12 Parallel tool calling and tool-error handling [v2].**
-- **8.13 Reasoning patterns compared [v2]:** ReAct, Plan-and-Execute, Reflexion, Tree of Thoughts, and when to use each.
+- **8.13 Reasoning patterns compared [v2]:** ReAct, Plan-and-Execute, Reflexion, Tree of Thoughts, self-consistency, and when to use each.
 
 **Build — Tool-Using Agent / ToolAgent:** agent with search, calculator and SQL tools, plus one live external API.
 **Checkpoint:** task-completion rate, tool-call accuracy, graceful failure.
@@ -287,7 +288,7 @@ flowchart TB
 - **10.3 Typed schemas and state machines for reliable agent messaging [Crio].**
 - **10.4 Coordination failures; cost and latency.**
 - **10.5 When not to use multi-agent.**
-- **10.6 Agent protocols:** A2A **and ACP [Crio]**.
+- **10.6 Agent protocols:** A2A **and ACP [Crio]**; lab: one agent discovers another through its agent card and delegates a task [v2].
 - **10.7 CrewAI in depth [v2]:** Agent, Task, Crew, Tool; sequential vs hierarchical process; short-term, long-term and entity memory.
 - **10.8 AutoGen [v2]:** AssistantAgent vs UserProxyAgent, GroupChat, code execution, termination conditions, mixing LLMs.
 
@@ -297,7 +298,7 @@ flowchart TB
 ### Module 11 — MCP, AI Security and Governance (weeks 22–23)
 
 - **11.1 Model Context Protocol:** hosts, clients, servers; stdio and HTTP transports.
-- **11.2 Building an MCP server.**
+- **11.2 Building an MCP server;** MCP security basics: authentication, rate limiting, input validation [v2].
 - **11.3 Multi-tenant MCP [Crio]:** per-tenant scoping, RBAC at the tool boundary, OAuth, audit logs.
 - **11.4 Threats:** injection, retrieval poisoning, tool abuse, exfiltration.
 - **11.5 Guardrails:** Guardrails AI, NeMo Guardrails, permissions.
@@ -328,7 +329,7 @@ flowchart TB
 ### Module 12A — Cloud AI on AWS (week 26) [Crio]
 
 - **12A.1 Cloud AI ecosystems:** AWS, Azure, GCP compared.
-- **12A.2 Amazon Bedrock:** managed models, knowledge bases, guardrails.
+- **12A.2 Amazon Bedrock:** managed models, knowledge bases, guardrails, Bedrock Agents [v2].
 - **12A.3 Bedrock AgentCore:** hosting agents.
 - **12A.4 SageMaker:** hosting your own fine-tuned model.
 - **12A.5 Monitoring and cost alarms on AWS.**
@@ -418,6 +419,41 @@ EKS deploy, Prometheus/Grafana metrics, and guardrails that block `shell=True` a
 
 **Build — DevAgent:** issue → merged-quality PR on a toy repo, with a 15-minute demo video.
 **Checkpoint:** test pass rate and review findings per run; a blocked unsafe-code attempt.
+
+## Topics added from the v2 syllabus (in learning order)
+
+Each [v2] brick sits right after the topic it depends on. Plain-language explanations with runnable examples:
+[notes/v2-topics-study-guide.md](notes/v2-topics-study-guide.md).
+
+| # | Brick | Topic | Learn after |
+|---|---|---|---|
+| 1 | 1.0 | Python from zero (basics, OOP) | — (start here) |
+| 2 | 1.10 | FastAPI streaming (SSE) and authentication | 1.7 FastAPI basics |
+| 3 | 1A.0a–c | NumPy, Pandas, statistics | 1.0 Python |
+| 4 | 1A.8 | Classical ML with scikit-learn | 1A.3 metrics |
+| 5 | 1A.9 | PyTorch training loop | 1A.5 neural networks |
+| 6 | 2.3 | Visualising attention (BertViz) | 2.3 the Transformer |
+| 7 | 2.12 | Hugging Face hands-on; encoder vs decoder | 2.5 model ecosystem |
+| 8 | 2.13 | How LLMs are trained (pre-training, instruction tuning, RLHF) | 1A.9 training loop |
+| 9 | 2.14 | Hallucination and reading benchmarks | 2.13 |
+| 10 | 4.2 | Plotting embeddings with PCA | 4.2 embedding models |
+| 11 | 4.13 | pgvector, Pinecone, Confluence/Slack loaders | 4.5 vector databases |
+| 12 | 4.14 | LangChain LCEL, output parsers, memory | 4.12 frameworks |
+| 13 | 5.12 | Self-RAG | 5.7 agentic RAG |
+| 14 | 8.11 | Memory types (episodic, semantic, procedural) | 8.6 memory |
+| 15 | 8.12 | Parallel tool calling, tool errors | 8.3 tool calling |
+| 16 | 8.13 | Reasoning patterns: ReAct, Plan-and-Execute, Reflexion, Tree of Thoughts, self-consistency | 8.4 planning loops |
+| 17 | 9.7 | LangSmith tracing and evaluation | 9.6 evaluating agents |
+| 18 | 10.6 | A2A discovery and delegation lab | 10.6 protocols |
+| 19 | 10.7 | CrewAI in depth | 10.1 architectures |
+| 20 | 10.8 | AutoGen | 10.7 CrewAI |
+| 21 | 11.2 | MCP security: auth, rate limiting, validation | 11.2 MCP server |
+| 22 | 12.10 | Docker multi-stage builds, Compose | 12.2 packaging |
+| 23 | 12.11 | LLMOps: MLflow, A/B tests, registry, SLAs | 12.3 CI/CD eval gates |
+| 24 | 12A.2, 12A.6 | Bedrock Agents; SageMaker Pipelines, Model Monitor; IAM least privilege | 12A.2–12A.4 |
+| 25 | Module 12C | Kubernetes, EKS, Prometheus, Grafana, Datadog, SLOs | 12A Cloud AI on AWS |
+| 26 | 13.11 | Capstone option: Agentic AI SRE / AIOps platform | 12C |
+| 27 | Module 15 | Bonus capstone: autonomous SWE agent | 13A, 13, 14 |
 
 ---
 
